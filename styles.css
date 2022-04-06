@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+/*                      globals                          */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  height: 100vh;
+  background: #e55d87; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #5fc3e4,
+    #e55d87
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #5fc3e4,
+    #e55d87
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+}
+img {
+  width: 100%;
+}
+
+/*                  card                 */
+
+.card {
+  text-align: center;
+  background-color: white;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
+}
+.card__img {
+  width: 100%;
+}
+.card__info {
+  padding: 1em;
+}
+.role__btn {
+  width: 100%;
+  border: none;
+  padding: 1.5em;
+  background-color: green;
+  color: white;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 200ms ease;
+}
+
+.role__btn:hover,
+.role__btn:focus {
+  background-color: #732d91;
+  outline: none;
+}
+.btn {
+  width: 100%;
+  border: none;
+  padding: 1.5em;
+  background-color: #8e44ad;
+  color: white;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 200ms ease;
+}
+.btn:hover,
+.btn:focus {
+  background-color: #732d91;
+  outline: none;
+}
+.hide__btn {
+  width: 100%;
+  padding: 1.5em;
+  background-color: rgb(231, 231, 231);
+  border: none;
+  font-weight: 700;
+  color: #8e44ad;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+.hide__btn:hover,
+.hide__btn:focus {
+  background-color: lightgray;
+  outline: none;
+}
+.card__info-name {
+  color: #8e44ad;
+}
+.buttons {
+  width: 100%;
+  display: flex;
+}
+.buttons > button {
+  width: 100%;
+}
+/*                utilities                 */
+
+.d-none {
+  display: none;
+}
+.bg-change {
+  background-color: #8e44ad;
+}
+/*                   options card                    */
+.options__card {
+  width: 50%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.options__card {
+  background-color: white;
+}
+.role {
+  padding: 1em;
+  transition: all 200ms ease;
+}
+.role img {
+  border-radius: 10px;
+}
+.role-input-text {
+  width: 100%;
+  border: none;
+  height: 30px;
+  background-color: lightgray;
+  padding: 0.3em;
+  border-radius: 5px;
+}
+.role-input-text:focus {
+  outline: none;
+}
+label {
+  cursor: pointer;
+}
+/*                media                */
+
+@media (max-width: 700px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
