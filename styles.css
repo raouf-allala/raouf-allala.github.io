@@ -11,7 +11,8 @@
 }
 
 body {
-  height: 100vh;
+  padding-block: 1em;
+  height: 100%;
   background: #e55d87; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
@@ -154,5 +155,8 @@ label {
 @media (max-width: 700px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .options__card {
+    width: 80%;
   }
 }
