@@ -130,6 +130,9 @@ img {
   background-color: white;
 }
 .role {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 1em;
   transition: all 200ms ease;
 }
