@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="options__card">
+      <div class="options__roles">
+        <form>
+          <div class="grid">
+            <div class="role">
+              <label for="3">
+                <img src="assets/role3.png" alt="" />
+                <h3>La Voyante</h3>
+              </label>
+              <input type="checkbox" name="role3" value="3" id="3" />
+            </div>
+            <div class="role">
+              <label for="4">
+                <img src="assets/role4.png" alt="" />
+                <h3>La Sorciere</h3>
+              </label>
+              <input type="checkbox" name="role4" value="4" id="4" />
+            </div>
+            <div class="role">
+              <label for="5">
+                <img src="assets/role5.png" alt="" />
+                <h3>Chasseur</h3>
+              </label>
+              <input type="checkbox" name="role5" value="5" id="5" />
+            </div>
+            <div class="role">
+              <label for="6">
+                <img src="assets/role6.png" alt="" />
+                <h3>Voleur</h3>
+              </label>
+              <input type="checkbox" name="role6" value="6" id="6" />
+            </div>
+            <div class="role">
+              <label for="1">
+                <img src="assets/role1.png" alt="" />
+                <h3>Simple Villageois</h3>
+              </label>
+              <input
+                type="number"
+                min="1"
+                autocomplete="off"
+                required
+                name="role1"
+                id="1"
+                placeholder="Nombre des simples"
+                class="role-input-text"
+              />
+            </div>
+            <div class="role">
+              <label for="2">
+                <img src="assets/role2.png" alt="" />
+                <h3>Loup Garou</h3>
+              </label>
+              <input
+                type="number"
+                min="1"
+                autocomplete="off"
+                required
+                name="role2"
+                id="2"
+                placeholder="Nombre des loups"
+                class="role-input-text"
+              />
+            </div>
+          </div>
+          <input type="submit" class="btn" />
+        </form>
+      </div>
+    </div>
+    <div class="card d-none">
+      <div class="card__img">
+        <img src="assets/hidden.png" alt="your role is !" />
+      </div>
+      <div class="card__info">
+        <span class="counter">Counter</span>
+        <h2 class="card__info-name">Ton Rôle</h2>
+        <p class="card__info-desc">une description de votre rôle</p>
+      </div>
+      <div class="buttons">
+        <button class="role__btn">Get Role</button>
+        <button class="hide__btn d-none">Hide</button>
+      </div>
+    </div>
+  </body>
+  <script src="app.js"></script>
+</html>
