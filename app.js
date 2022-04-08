@@ -37,12 +37,43 @@ const rolesList = [
     id: 6,
     desc: "Son objectif n'est pas fixe : il peut choisir son rôle parmi les deux cartes qui n'ont pas encore été distribuées.",
   },
+  {
+    roleName: "Cupidon",
+    id: 7,
+    desc: "Son objectif est d'éliminer tous les Loups-Garous. Dès le début de la partie, il doit former un couple de deux joueurs. Leur objectif sera de survivre ensemble, car si l'un d'eux meurt, l'autre se suicidera.",
+  },
+  {
+    roleName: "Salvateur",
+    id: 8,
+    desc: "Son objectif est d'éliminer tous les Loups-Garous. Chaque nuit, il peut protéger quelqu'un de l'attaque des Loups-Garous...",
+  },
+  {
+    roleName: "Père des Loups",
+    id: 9,
+    desc: "Son objectif est d'éliminer tous les innocents. il se réunit avec ses compères Loups pour décider d'une victime à éliminer... Une fois dans la partie, il peut transformer la victime en loup-garou !",
+  },
+  {
+    roleName: "Corbeau",
+    id: 10,
+    desc: "Son objectif est d'éliminer tous les Loups-Garous. Chaque nuit, il peut désigner un joueur, qui se retrouvera le lendemain avec deux voix contre lui au vote",
+  },
+  {
+    roleName: "Ancien",
+    id: 11,
+    desc: "Son objectif est d'éliminer tous les Loups-Garous.Il peut résister à la première attaque des loups.Mais s'il est tué par un ou des innocent(s),tous les innocents perdront leurs pouvoirs!",
+  },
+  {
+    roleName: "Enfant Sauvage",
+    id: 12,
+    desc: "Son objectif est d'éliminer tous les Loups-Garous.Il choisit un modèle au début du jeu, si ce dernier meurt, il devient Loup-Garou et joue dans leur camp.",
+  },
 ];
 // submit options
 
 const submitForm = document.querySelector("form");
 const card = document.querySelector(".card");
 const optionsCard = document.querySelector(".options__card");
+const body = document.querySelector("body");
 const usedRolesId = [];
 const usedRoles = [
   {
@@ -58,7 +89,9 @@ const usedRoles = [
 ];
 const counter = document.querySelector(".counter");
 let playersNumber = 0;
+const usedRolesNames = [];
 submitForm.addEventListener("submit", (e) => {
+  body.style.height = "100vh";
   e.preventDefault();
   const checkboxArray = Array.from(
     document.querySelectorAll("input[type='checkbox']:checked")
@@ -82,7 +115,10 @@ submitForm.addEventListener("submit", (e) => {
   for (let i = 0; i < werewolfNumber - 1; i++) {
     usedRoles.push(rolesList[1]);
   } // adds werewolfs to usedRoles
-  console.log(usedRoles);
+  usedRoles.forEach((usedRole) => {
+    usedRolesNames.push(usedRole.roleName);
+  });
+  console.log(usedRolesNames);
 });
 
 // generate random role
@@ -111,6 +147,8 @@ button.addEventListener("click", () => {
 });
 // hide info
 const hideBtn = document.querySelector(".hide__btn");
+const rolesCard = document.querySelector(".roles__card");
+const rolesCardList = document.querySelector(".roles__list");
 hideBtn.addEventListener("click", () => {
   roleImage.src = `assets/hidden.png`;
   roleName.textContent = "Ton Rôle";
@@ -118,6 +156,17 @@ hideBtn.addEventListener("click", () => {
   button.classList.remove("d-none");
   hideBtn.classList.add("d-none");
   if (currentPlayerNumber === playersNumber) {
-    card.innerHTML = `<h1>Game started</h1>`;
+    card.classList.add("d-none");
+    rolesCard.classList.remove("d-none");
+    // delete duplicates
+    const usedRolesNamesMin = [];
+    for (let i = 0; i < usedRolesNames.length; i++) {
+      if (usedRolesNamesMin.indexOf(usedRolesNames[i]) === -1) {
+        usedRolesNamesMin.push(usedRolesNames[i]);
+      }
+    }
+    usedRolesNamesMin.forEach((usedRolesName) => {
+      rolesCardList.innerHTML += `<li>${usedRolesName}</li>`;
+    });
   }
 });
