@@ -140,6 +140,9 @@ img {
 .role img {
   border-radius: 10px;
 }
+.role input {
+  accent-color: #8e44ad;
+}
 .role-input-text {
   width: 100%;
   border: none;
