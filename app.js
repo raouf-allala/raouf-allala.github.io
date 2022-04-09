@@ -10,15 +10,28 @@ if ("serviceWorker" in navigator) {
     });
 }
 
+// play
+const playBtn = document.querySelector(".btn--play");
+const playCard = document.querySelector(".play__intro");
 // splash
 const audio = document.querySelector("audio");
 const splash = document.querySelector(".splash__intro");
-document.addEventListener("DOMContentLoaded", (e) => {
+playBtn.addEventListener("click", () => {
+  playCard.classList.add("d-none");
+  splash.classList.remove("d-none");
+  audio.play();
   setTimeout(() => {
     splash.classList.add("display-none");
     optionsCard.classList.remove("d-none");
+    splash.style.zIndex = "-100";
   }, 3000);
 });
+// document.addEventListener("DOMContentLoaded", (e) => {
+//   setTimeout(() => {
+//     splash.classList.add("display-none");
+//     optionsCard.classList.remove("d-none");
+//   }, 3000);
+// });
 // generate a random number
 
 const randomNumber = () => {
