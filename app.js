@@ -14,7 +14,6 @@ if ("serviceWorker" in navigator) {
 const audio = document.querySelector("audio");
 const splash = document.querySelector(".splash__intro");
 document.addEventListener("DOMContentLoaded", (e) => {
-  audio.play();
   setTimeout(() => {
     splash.classList.add("display-none");
     optionsCard.classList.remove("d-none");
