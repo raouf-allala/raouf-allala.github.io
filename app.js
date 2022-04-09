@@ -1,3 +1,24 @@
+// service worker
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker
+    .register("sw.js")
+    .then((reg) => {
+      console.log("registered", reg);
+    })
+    .catch((err) => {
+      console.log("didnt reg");
+    });
+}
+
+// splash
+const audio = document.querySelector("audio");
+const splash = document.querySelector(".splash__intro");
+document.addEventListener("DOMContentLoaded", (e) => {
+  audio.play();
+  setTimeout(() => {
+    splash.classList.add("display-none");
+  }, 3000);
+});
 // generate a random number
 
 const randomNumber = () => {
