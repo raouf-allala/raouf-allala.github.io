@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
   audio.play();
   setTimeout(() => {
     splash.classList.add("display-none");
+    optionsCard.classList.remove("d-none");
   }, 3000);
 });
 // generate a random number
