@@ -193,14 +193,22 @@ hideBtn.addEventListener("click", () => {
     card.classList.add("d-none");
     rolesCard.classList.remove("d-none");
     // delete duplicates
-    const usedRolesNamesMin = [];
-    for (let i = 0; i < usedRolesNames.length; i++) {
-      if (usedRolesNamesMin.indexOf(usedRolesNames[i]) === -1) {
-        usedRolesNamesMin.push(usedRolesNames[i]);
-      }
-    }
-    usedRolesNamesMin.forEach((usedRolesName) => {
-      rolesCardList.innerHTML += `<li>${usedRolesName}</li>`;
+    // const usedRolesNamesMin = [];
+    // for (let i = 0; i < usedRolesNames.length; i++) {
+    //   if (usedRolesNamesMin.indexOf(usedRolesNames[i]) === -1) {
+    //     usedRolesNamesMin.push(usedRolesNames[i]);
+    //   }
+    // }
+    usedRolesNames.forEach((usedRolesName) => {
+      rolesCardList.innerHTML += `<li class="used__role">${usedRolesName}
+      <img class="used__role--img" src="assets/kill.png">
+      </li>`;
     });
+    body.style.height = "100%";
+  }
+});
+rolesCardList.addEventListener("click", (e) => {
+  if (e.target.classList.contains("used__role--img")) {
+    e.target.parentElement.remove();
   }
 });

@@ -229,9 +229,23 @@ label {
 /*                    rolesCard                      */
 
 .roles__card {
+  width: min(600px, 80%);
   background-color: #ffffff;
-  padding: 2em;
+  padding-block: 2em;
+  padding-inline: 1em;
   border-radius: 10px;
   line-height: 1.7;
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
+}
+.used__role {
+  background-color: lightgray;
+  padding: 1em;
+  border-radius: 10px;
+  margin-bottom: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.used__role--img {
+  width: 30px;
 }
