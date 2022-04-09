@@ -199,7 +199,7 @@ hideBtn.addEventListener("click", () => {
     //     usedRolesNamesMin.push(usedRolesNames[i]);
     //   }
     // }
-    usedRolesNames.forEach((usedRolesName) => {
+    usedRolesNames.sort().forEach((usedRolesName) => {
       rolesCardList.innerHTML += `<li class="used__role">${usedRolesName}
       <img class="used__role--img" src="assets/kill.png">
       </li>`;
