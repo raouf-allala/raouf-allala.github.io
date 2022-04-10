@@ -209,6 +209,6 @@ hideBtn.addEventListener("click", () => {
 });
 rolesCardList.addEventListener("click", (e) => {
   if (e.target.classList.contains("used__role--img")) {
-    e.target.parentElement.remove();
+    e.target.parentElement.classList.toggle("bg-red");
   }
 });

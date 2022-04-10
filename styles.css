@@ -120,6 +120,10 @@ img {
 .bg-change {
   background-color: #8e44ad;
 }
+.bg-red {
+  background-color: #d63031 !important;
+  color: #ffffff;
+}
 /*                   options card                    */
 .options__card {
   width: 50%;
@@ -167,7 +171,7 @@ label {
 .play__intro {
   background-color: white;
   padding: 2em;
-  transform: translateY(30%);
+  transform: translateY(35%);
   display: flex;
   flex-direction: column;
   align-items: center;
