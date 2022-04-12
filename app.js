@@ -168,6 +168,7 @@ const button = document.querySelector(".role__btn");
 const roleName = document.querySelector(".card__info-name");
 const roleDesc = document.querySelector(".card__info-desc");
 let currentPlayerNumber = 0;
+const showAudio = document.querySelector(".audio__show");
 button.addEventListener("click", () => {
   const randomRole = generateRole();
   usedRoles.splice(usedRoles.indexOf(randomRole), 1); // deletes role that pops
@@ -178,17 +179,20 @@ button.addEventListener("click", () => {
   counter.textContent = `${currentPlayerNumber} / ${playersNumber}`;
   button.classList.add("d-none");
   hideBtn.classList.remove("d-none");
+  showAudio.play();
 });
 // hide info
 const hideBtn = document.querySelector(".hide__btn");
 const rolesCard = document.querySelector(".roles__card");
 const rolesCardList = document.querySelector(".roles__list");
+const hideAudio = document.querySelector(".audio__hide");
 hideBtn.addEventListener("click", () => {
   roleImage.src = `assets/hidden.png`;
   roleName.textContent = "Ton Rôle";
   roleDesc.textContent = "une description de votre rôle";
   button.classList.remove("d-none");
   hideBtn.classList.add("d-none");
+  hideAudio.play();
   if (currentPlayerNumber === playersNumber) {
     card.classList.add("d-none");
     rolesCard.classList.remove("d-none");
