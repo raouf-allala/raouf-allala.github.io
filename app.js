@@ -152,7 +152,6 @@ submitForm.addEventListener("submit", (e) => {
   usedRoles.forEach((usedRole) => {
     usedRolesNames.push(usedRole.roleName);
   });
-  console.log(usedRolesNames);
 });
 
 // generate random role
